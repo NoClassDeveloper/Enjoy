@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memories of an Unforgettable Day — Bhavani Island · Smaash · Butterflies</title>
+<meta name="description" content="A cinematic journey through Bhavani Island, Smaash Zone, and the Butterfly Exhibition">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@100;200;300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== ROOT & RESET ===== */
+:root {
+  --gold:#c8a96e;--gold-light:#f0d48a;--gold-dark:#8a6f3e;
+  --deep:#050508;--deep2:#0a0a12;--blue-dark:#060a1a;
+  --teal:#0e6b6b;--electric:#00ffe0;--coral:#ff6b4a;
+  --violet:#7b2fff;--white:#f5f0e8;--muted:rgba(245,240,232,0.5);
+  --font-d:'Bebas Neue',sans-serif;
+  --font-s:'Cormorant Garamond',serif;
+  --font-b:'Montserrat',sans-serif;
+  --font-t:'Playfair Display',serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto;font-size:16px}
+body{background:var(--deep);color:var(--white);font-family:var(--font-b);overflow-x:hidden;cursor:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+video{display:block;max-width:100%}
+
+/* ===== CURSOR ===== */
+#cur{width:12px;height:12px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:transform .1s}
+#cur-f{width:40px;height:40px;border:1px solid rgba(200,169,110,.5);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .15s ease}
+
+/* ===== PROGRESS ===== */
+#prog{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--electric));z-index:9999;transition:width .1s linear}
+
+/* ===== NOISE / GRAIN ===== */
+#noise{position:fixed;inset:0;opacity:.03;pointer-events:none;z-index:9997;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:150px}
+.vignette{position:fixed;inset:0;pointer-events:none;z-index:9996;background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.55) 100%)}
+
+/* ===== LOADER ===== */
+#loader{position:fixed;inset:0;background:var(--deep);z-index:100000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .9s ease,visibility .9s ease}
+#loader.gone{opacity:0;visibility:hidden}
+.ld-title{font-family:var(--font-d);font-size:clamp(3rem,8vw,7rem);letter-spacing:.3em;color:var(--gold);opacity:0;animation:fdIn 1s ease .3s forwards}
+.ld-sub{font-family:var(--font-b);font-size:clamp(.6rem,1.5vw,.85rem);letter-spacing:.4em;color:var(--muted);text-transform:uppercase;margin-top:1rem;opacity:0;animation:fdIn 1s ease .7s forwards}
+.ld-bar-w{width:min(300px,70vw);height:1px;background:rgba(255,255,255,.1);margin-top:3rem;overflow:hidden;opacity:0;animation:fdIn 1s ease 1s forwards}
+.ld-bar{height:100%;width:0;background:linear-gradient(90deg,var(--gold-dark),var(--gold));animation:ldProg 2.5s ease 1.2s forwards}
+.ld-pct{font-family:var(--font-d);font-size:.9rem;letter-spacing:.2em;color:var(--gold);margin-top:.8rem;opacity:0;animation:fdIn 1s ease 1s forwards}
+@keyframes fdIn{to{opacity:1}}
+@keyframes ldProg{to{width:100%}}
+
+/* ===== NAV ===== */
+#nav{position:fixed;top:0;left:0;right:0;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;z-index:9000;transition:background .4s}
+#nav.scrolled{background:rgba(5,5,8,.88);backdrop-filter:blur(14px)}
+.nav-logo{font-family:var(--font-d);font-size:1.4rem;letter-spacing:.25em;color:var(--gold);text-decoration:none}
+.nav-chs{display:flex;gap:2rem;list-style:none}
+.nav-chs li a{font-family:var(--font-b);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,240,232,.6);text-decoration:none;transition:color .3s}
+.nav-chs li a:hover{color:var(--gold)}
+.nav-snd{display:flex;align-items:center;gap:.5rem;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);cursor:pointer;background:none;border:none;transition:color .3s}
+.nav-snd:hover{color:var(--gold)}
+.snd-bars{display:flex;gap:2px;align-items:flex-end;height:14px}
+.snd-bars span{display:block;width:2px;background:var(--gold);border-radius:1px;animation:sBar .8s ease infinite alternate}
+.snd-bars span:nth-child(1){height:5px;animation-delay:0s}
+.snd-bars span:nth-child(2){height:9px;animation-delay:.15s}
+.snd-bars span:nth-child(3){height:13px;animation-delay:.3s}
+.snd-bars span:nth-child(4){height:7px;animation-delay:.45s}
+@keyframes sBar{from{transform:scaleY(.3)}to{transform:scaleY(1)}}
+@media(max-width:768px){#nav{padding:1rem 1.5rem}.nav-chs{display:none}}
+
+/* ===== CHAPTER DOTS ===== */
+.ch-dots{position:fixed;right:2rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.7rem;z-index:8000}
+.ch-dot{width:6px;height:6px;border-radius:50%;background:rgba(200,169,110,.3);cursor:pointer;transition:all .3s;position:relative}
+.ch-dot.active{background:var(--gold);transform:scale(1.6)}
+.ch-dot:hover{background:var(--gold)}
+.ch-dot::before{content:attr(data-l);position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
+.ch-dot:hover::before{opacity:1}
+@media(max-width:768px){.ch-dots{display:none}}
+
+/* ===== HERO ===== */
+#hero{position:relative;width:100vw;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--deep)}
+#hero-cv{position:absolute;inset:0;width:100%;height:100%}
+.hero-bg-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;filter:saturate(.3) brightness(.4)}
+.hero-ov{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(5,5,8,.9) 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,169,110,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,169,110,.03) 1px,transparent 1px);background-size:60px 60px}
+.hero-cnt{position:relative;z-index:10;text-align:center;padding:0 2rem}
+.hero-eye{font-family:var(--font-b);font-size:clamp(.6rem,1.2vw,.75rem);letter-spacing:.6em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;transform:translateY(20px);animation:hrRv 1s ease 3.5s forwards}
+.hero-ttl{font-family:var(--font-d);font-size:clamp(4rem,13vw,14rem);line-height:.9;letter-spacing:.05em;opacity:0;transform:translateY(40px);animation:hrRv 1.2s ease 3.8s forwards}
+.hero-ttl .gd{color:var(--gold)}
+.hero-sub{font-family:var(--font-s);font-size:clamp(1rem,2.5vw,1.8rem);font-style:italic;color:var(--muted);margin-top:1rem;opacity:0;transform:translateY(20px);animation:hrRv 1s ease 4.2s forwards}
+.hero-meta{display:flex;gap:3rem;justify-content:center;margin-top:3rem;opacity:0;animation:hrRv 1s ease 4.6s forwards}
+.hm-item{text-align:center}
+.hm-item .n{font-family:var(--font-d);font-size:2.5rem;color:var(--gold);display:block}
+.hm-item .l{font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
+.hero-div{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);margin:3rem auto 0;opacity:0;animation:hrRv 1s ease 5s forwards}
+.scroll-h{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:hrRv 1s ease 5.5s forwards}
+.s-mouse{width:24px;height:38px;border:1px solid rgba(200,169,110,.5);border-radius:12px;position:relative}
+.s-whl{width:3px;height:6px;background:var(--gold);border-radius:2px;position:absolute;top:6px;left:50%;transform:translateX(-50%);animation:sWhl 1.5s ease infinite}
+@keyframes sWhl{0%{transform:translateX(-50%) translateY(0);opacity:1}100%{transform:translateX(-50%) translateY(14px);opacity:0}}
+.s-txt{font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
+@keyframes hrRv{to{opacity:1;transform:translateY(0)}}
+.hero-part{position:absolute;border-radius:50%;pointer-events:none;animation:fprt var(--dur,8s) ease-in-out var(--dly,0s) infinite alternate}
+@keyframes fprt{from{transform:translateY(0) translateX(0) scale(1);opacity:var(--opa,.4)}to{transform:translateY(var(--dy,-40px)) translateX(var(--dx,20px)) scale(1.3);opacity:.1}}
+
+/* ===== CHAPTER HEADERS ===== */
+.ch-hdr{position:relative;width:100vw;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:6rem 2rem}
+.ch-num{font-family:var(--font-d);font-size:clamp(8rem,20vw,22rem);line-height:1;color:rgba(200,169,110,.04);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-.02em}
+.ch-tag{font-family:var(--font-b);font-size:clamp(.55rem,1vw,.7rem);letter-spacing:.6em;text-transform:uppercase;color:var(--gold);position:relative;z-index:1;margin-bottom:1.5rem;opacity:0}
+.ch-ttl{font-family:var(--font-d);font-size:clamp(3.5rem,9vw,10rem);line-height:.95;text-align:center;position:relative;z-index:1;opacity:0;transform:translateY(40px)}
+.ch-dsc{font-family:var(--font-s);font-size:clamp(1rem,2vw,1.5rem);font-style:italic;text-align:center;color:var(--muted);max-width:600px;margin-top:1.5rem;line-height:1.7;position:relative;z-index:1;opacity:0}
+.ch-ln{width:60px;height:1px;background:var(--gold);margin:2rem auto;position:relative;z-index:1;opacity:0;transform:scaleX(0)}
+.ch-ln.in-view{opacity:1;transform:scaleX(1);transition:all .8s ease .6s}
+.ch-tag.in-view{opacity:1;transition:all .8s ease}
+.ch-ttl.in-view{opacity:1;transform:translateY(0);transition:all 1s ease .2s}
+.ch-dsc.in-view{opacity:1;transition:all 1s ease .4s}
+.ch-cv{position:absolute;inset:0;width:100%;height:100%}
+
+/* ===== TRANSITION SCENES ===== */
+.ct-scene{position:relative;height:100vh;width:100vw;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ct-txt{font-family:var(--font-d);font-size:clamp(2rem,6vw,6rem);letter-spacing:.3em;text-align:center;z-index:10;opacity:0}
+
+/* ===== PHOTO SCENE BASE ===== */
+.ps{position:relative;overflow:hidden;will-change:transform}
+.ps:hover .pi{transform:scale(1.05)}
+.pi{width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s cubic-bezier(.25,.46,.45,.94)}
+.pc{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);opacity:0;transform:translateY(10px);transition:all .4s ease;z-index:10}
+.ps:hover .pc,.ps.in-view .pc{opacity:1;transform:translateY(0)}
+.pc-t{font-family:var(--font-s);font-size:clamp(1rem,2vw,1.4rem);font-style:italic;color:var(--white);display:block}
+.pc-s{font-family:var(--font-b);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-top:.3rem}
+
+/* ===== PHOTO LAYOUTS ===== */
+.pf{width:100vw;height:100vh}.pf .pi{height:100vh}
+.pd{display:grid;grid-template-columns:1fr 1fr;height:80vh}.pd .ps{height:100%}
+.pt{display:grid;grid-template-columns:1.5fr 1fr 1fr;height:70vh}
+.pq{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;height:100vh}
+.pw{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;height:90vh}
+.pw .pm{grid-row:1/3}
+.pcn{width:100vw;height:42.5vw;min-height:300px;max-height:100vh}
+.pcn .pi{height:100%}
+.pmag{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:4px;background:var(--deep)}
+.pmag .ps:first-child{grid-column:1/3;height:60vh}
+.pmag .ps:not(:first-child){height:40vh}
+.pfloat-w{padding:6rem 4rem;display:flex;justify-content:center;align-items:center;background:var(--deep)}
+.pfloat{width:min(360px,80vw);height:min(480px,100vw);box-shadow:0 40px 100px rgba(0,0,0,.8),0 0 60px rgba(200,169,110,.1)}
+@media(max-width:768px){
+  .pd{grid-template-columns:1fr;height:auto}.pd .ps{height:50vh}
+  .pt{grid-template-columns:1fr;height:auto}.pt .ps{height:40vh}
+  .pq{grid-template-columns:1fr;height:auto}.pq .ps{height:50vh}
+  .pw{grid-template-columns:1fr;height:auto}.pw .pm{grid-row:auto}.pw .ps{height:50vh}
+  .pmag{grid-template-columns:1fr}.pmag .ps:first-child{grid-column:auto}
+}
+
+/* ===== VIDEO BLOCKS ===== */
+.vs{position:relative;width:100vw;overflow:hidden;background:#000}
+.vs-full{height:100vh}.vs-full video{width:100%;height:100%;object-fit:cover}
+.vlb{position:absolute;top:0;left:0;right:0;height:8%;background:#000;z-index:5}
+.vlbb{position:absolute;bottom:0;left:0;right:0;height:8%;background:#000;z-index:5}
+.vs video{width:100%;height:auto;display:block;filter:saturate(.9) contrast(1.05)}
+.vfg{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.08'/%3E%3C/svg%3E");pointer-events:none;z-index:6;opacity:.15}
+.vov{position:absolute;inset:0;background:rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;transition:opacity .4s;cursor:pointer}
+.vov.playing{opacity:0;pointer-events:none}
+.vpb{width:80px;height:80px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;background:rgba(0,0,0,.3);backdrop-filter:blur(4px)}
+.vpb:hover{background:var(--gold);transform:scale(1.1)}
+.vpb:hover svg path{fill:#000}
+.vpb svg{width:28px;height:28px;margin-left:4px}
+.vpb svg path{fill:var(--gold);transition:fill .3s}
+.vcb{position:absolute;bottom:8%;left:0;right:0;padding:1.5rem 3rem;z-index:11;opacity:0;transform:translateY(10px);transition:all .5s ease .3s}
+.vs.in-view .vcb{opacity:1;transform:translateY(0)}
+.vc-t{font-family:var(--font-d);font-size:clamp(1.5rem,4vw,3.5rem);letter-spacing:.1em;color:var(--white);text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.vc-s{font-family:var(--font-s);font-size:clamp(.9rem,1.5vw,1.2rem);font-style:italic;color:var(--gold);margin-top:.3rem;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+.sviz{display:flex;align-items:flex-end;gap:2px;height:24px;margin-top:1rem}
+.sviz span{display:block;width:3px;background:var(--gold);border-radius:2px;transition:height .1s}
+
+/* ===== ANIMATIONS (scroll-triggered) ===== */
+/* Ken Burns */
+.kb .pi{animation:kb 10s ease-in-out infinite alternate;transform-origin:center}
+@keyframes kb{from{transform:scale(1) translate(0,0)}to{transform:scale(1.1) translate(-2%,-2%)}}
+/* Blur focus */
+.bf .pi{filter:blur(8px);transition:filter 1.2s ease}
+.bf.in-view .pi{filter:blur(0)}
+/* Zoom burst */
+.zb{transform:scale(1.15);opacity:0;transition:transform 1.2s cubic-bezier(.25,.46,.45,.94),opacity 1s ease}
+.zb.in-view{transform:scale(1);opacity:1}
+/* Slide left/right */
+.sl{opacity:0;transform:translateX(-60px);transition:all 1s cubic-bezier(.25,.46,.45,.94)}
+.sl.in-view{opacity:1;transform:translateX(0)}
+.sr{opacity:0;transform:translateX(60px);transition:all 1s cubic-bezier(.25,.46,.45,.94)}
+.sr.in-view{opacity:1;transform:translateX(0)}
+/* Scale reveal */
+.scr{opacity:0;transform:scale(.85);transition:all 1.2s cubic-bezier(.16,1,.3,1)}
+.scr.in-view{opacity:1;transform:scale(1)}
+/* Tilt */
+.tl{opacity:0;transform:perspective(600px) rotateY(20deg) scale(.95);transition:all 1.2s cubic-bezier(.16,1,.3,1)}
+.tl.in-view{opacity:1;transform:perspective(600px) rotateY(0) scale(1)}
+.tr{opacity:0;transform:perspective(600px) rotateY(-20deg) scale(.95);transition:all 1.2s cubic-bezier(.16,1,.3,1)}
+.tr.in-view{opacity:1;transform:perspective(600px) rotateY(0) scale(1)}
+/* Wipe horizontal */
+.wh{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s cubic-bezier(.76,0,.24,1)}
+.wh.in-view{clip-path:inset(0 0% 0 0)}
+/* Wipe diagonal */
+.wd{clip-path:polygon(0 0,0 0,0 100%,0 100%);transition:clip-path 1.3s cubic-bezier(.76,0,.24,1)}
+.wd.in-view{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+/* Rotate */
+.rt{opacity:0;transform:rotate(-8deg) scale(.9);transition:all 1.2s cubic-bezier(.16,1,.3,1)}
+.rt.in-view{opacity:1;transform:rotate(0) scale(1)}
+/* Fade up */
+.fu{opacity:0;transform:translateY(50px);transition:all 1s cubic-bezier(.25,.46,.45,.94)}
+.fu.in-view{opacity:1;transform:translateY(0)}
+/* Iris */
+.iris{clip-path:circle(0% at center);transition:clip-path 1.4s cubic-bezier(.76,0,.24,1)}
+.iris.in-view{clip-path:circle(75% at center)}
+/* Neon */
+.neon.in-view .pi{filter:brightness(1.05) saturate(1.3);box-shadow:0 0 30px rgba(0,255,224,.2),0 0 60px rgba(0,255,224,.1)}
+/* Light leak */
+.ll::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,200,50,.15) 0%,transparent 50%,rgba(255,100,50,.1) 100%);z-index:2;pointer-events:none;mix-blend-mode:screen;opacity:0;transition:opacity 1s}
+.ll.in-view::before{opacity:1}
+/* Film burn */
+.fb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--bx,80%) var(--by,20%),rgba(255,150,0,.4) 0%,transparent 60%);z-index:3;pointer-events:none;opacity:0;transition:opacity .6s;mix-blend-mode:screen}
+.fb.in-view::after{opacity:1}
+/* RGB split */
+.rgb:hover .pi{animation:rgb .3s ease}
+@keyframes rgb{0%{filter:none}25%{filter:drop-shadow(3px 0 0 rgba(255,0,0,.5)) drop-shadow(-3px 0 0 rgba(0,0,255,.5))}50%{filter:none}75%{filter:drop-shadow(-3px 0 0 rgba(255,0,0,.5)) drop-shadow(3px 0 0 rgba(0,255,0,.5))}100%{filter:none}}
+/* Glitch */
+.glitch:hover .pi{animation:glitch .4s steps(2) infinite}
+@keyframes glitch{0%{clip-path:inset(0 0 95% 0);transform:translate(-3px,2px)}20%{clip-path:inset(15% 0 80% 0);transform:translate(3px,-2px)}40%{clip-path:inset(50% 0 40% 0);transform:translate(-1px,1px)}60%{clip-path:inset(80% 0 10% 0);transform:translate(2px,-1px)}80%{clip-path:inset(20% 0 70% 0);transform:translate(-2px,2px)}100%{clip-path:inset(0 0 100% 0);transform:translate(0)}}
+
+/* ===== STORY BLOCKS ===== */
+.sb{padding:8rem 4rem;max-width:900px;margin:0 auto;text-align:center}
+.sb-l{font-family:var(--font-b);font-size:.6rem;letter-spacing:.6em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;opacity:0;transform:translateY(20px);transition:all .8s ease}
+.sb-l.in-view{opacity:1;transform:translateY(0)}
+.sb-q{font-family:var(--font-s);font-size:clamp(1.3rem,3vw,2.2rem);font-style:italic;line-height:1.6;opacity:0;transform:translateY(30px);transition:all 1s ease .2s}
+.sb-q.in-view{opacity:1;transform:translateY(0)}
+.sb-b{font-family:var(--font-b);font-size:clamp(.8rem,1.5vw,.95rem);font-weight:300;line-height:1.9;color:var(--muted);margin-top:1.5rem;opacity:0;transform:translateY(20px);transition:all 1s ease .4s}
+.sb-b.in-view{opacity:1;transform:translateY(0)}
+
+/* ===== CAPTION INTERLUDE ===== */
+.caption-il{padding:5rem 2rem;text-align:center;position:relative;overflow:hidden}
+.caption-il::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);transform:translateX(-50%)}
+.cap-txt{font-family:var(--font-s);font-size:clamp(1.4rem,3.5vw,2.8rem);font-style:italic;line-height:1.4;max-width:800px;margin:0 auto;position:relative;z-index:1;opacity:0;transform:translateY(30px);transition:all 1s ease}
+.cap-txt.in-view{opacity:1;transform:translateY(0)}
+.cap-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;margin:2rem auto 0;opacity:0;transition:opacity .8s ease .5s}
+.cap-dot.in-view{opacity:1}
+
+/* ===== STATS STRIP ===== */
+.stats{padding:4rem 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(200,169,110,.1);border-top:1px solid rgba(200,169,110,.1);border-bottom:1px solid rgba(200,169,110,.1)}
+.st-i{padding:2rem;text-align:center;background:var(--deep)}
+.st-n{font-family:var(--font-d);font-size:clamp(3rem,7vw,6rem);color:var(--gold);display:block;line-height:1}
+.st-l{font-family:var(--font-b);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--muted);margin-top:.5rem;display:block}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== FINALE ===== */
+#finale{position:relative;min-height:100vh;width:100vw;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:var(--deep);padding:6rem 2rem}
+#finale-cv{position:absolute;inset:0;width:100%;height:100%}
+.fin-div{width:80px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:0 auto 3rem;position:relative;z-index:10}
+.fin-ttl{font-family:var(--font-d);font-size:clamp(3rem,10vw,12rem);line-height:.9;text-align:center;position:relative;z-index:10;opacity:0;transform:translateY(40px);transition:all 1.2s cubic-bezier(.16,1,.3,1)}
+.fin-ttl.in-view{opacity:1;transform:translateY(0)}
+.fin-sub{font-family:var(--font-s);font-size:clamp(.9rem,2vw,1.5rem);font-style:italic;color:var(--muted);text-align:center;margin-top:1.5rem;position:relative;z-index:10;opacity:0;transition:opacity 1s ease .5s}
+.fin-sub.in-view{opacity:1}
+.fin-ctr{display:flex;gap:4rem;justify-content:center;margin-top:4rem;position:relative;z-index:10;flex-wrap:wrap}
+.fin-ct-i{text-align:center;opacity:0;transform:translateY(30px)}
+.fin-ct-i.in-view{opacity:1;transform:translateY(0);transition:all 1s ease var(--d,.5s)}
+.fin-ct-n{font-family:var(--font-d);font-size:clamp(3rem,7vw,6rem);color:var(--gold);display:block;line-height:1}
+.fin-ct-l{font-family:var(--font-b);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--muted);margin-top:.5rem;display:block}
+.fin-hrt{position:absolute;pointer-events:none;z-index:11;animation:hrtFloat var(--dur,6s) ease-in-out var(--dly,0s) infinite}
+@keyframes hrtFloat{0%{transform:translateY(0) rotate(var(--rot,0deg));opacity:.8}50%{transform:translateY(-60px) rotate(calc(var(--rot,0deg) + 20deg));opacity:.4}100%{transform:translateY(-120px) rotate(calc(var(--rot,0deg) + 40deg));opacity:0}}
+.fin-cr{font-family:var(--font-b);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,240,232,.2);position:relative;z-index:10;margin-top:3rem;opacity:0;transition:opacity 1s ease 2s}
+.fin-cr.in-view{opacity:1}
+
+/* ===== THEMING ===== */
+.t-island{background:var(--blue-dark)}
+.t-butterfly{background:#060a04}
+.t-smaash{background:#0a0005}
+.t-deep{background:var(--deep)}
+
+/* ===== SHIMMER LINE ===== */
+.shim{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);background-size:200% 100%;animation:shimM 3s ease infinite}
+@keyframes shimM{0%{background-position:-100% 0}100%{background-position:200% 0}}
+
+/* ===== SECTION LABEL ===== */
+.slbl{position:absolute;writing-mode:vertical-rl;font-family:var(--font-b);font-size:.55rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(200,169,110,.4);top:50%;transform:translateY(-50%);left:1.5rem;z-index:20}
+
+/* ===== MASONRY ===== */
+.masonry{columns:3;gap:4px;background:var(--deep)}
+.masonry .ps{break-inside:avoid;margin-bottom:4px}
+@media(max-width:768px){.masonry{columns:2}}
+@media(max-width:480px){.masonry{columns:1}}
+
+/* ===== HORIZONTAL SCROLL ===== */
+.hscr{overflow:hidden;position:relative;height:70vh}
+.hscr-t{display:flex;gap:4px;height:100%;will-change:transform}
+.hscr-i{min-width:50vw;height:100%;flex-shrink:0;position:relative;overflow:hidden}
+@media(max-width:768px){.hscr-i{min-width:80vw}}
+
+/* ===== GRAND FINALE VIDEO ===== */
+.gfv{position:relative;width:100vw;height:100vh;overflow:hidden;background:#000}
+.gfv video{width:100%;height:100%;object-fit:cover}
+.gfv-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3),transparent 30%,transparent 70%,rgba(0,0,0,.6));z-index:5;pointer-events:none}
+.gfv-lb{position:absolute;top:0;left:0;right:0;height:10%;background:#000;z-index:10}
+.gfv-lbb{position:absolute;bottom:0;left:0;right:0;height:10%;background:#000;z-index:10}
+.gfv-cnt{position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.gfv-ttl{font-family:var(--font-d);font-size:clamp(2rem,8vw,9rem);letter-spacing:.2em;text-align:center;text-shadow:0 0 80px rgba(200,169,110,.5)}
+.gfv-sub{font-family:var(--font-s);font-size:clamp(1rem,2.5vw,2rem);font-style:italic;color:var(--gold);text-align:center;margin-top:1rem;text-shadow:0 0 30px rgba(200,169,110,.4)}
+.gfv-q{font-family:var(--font-s);font-size:clamp(.9rem,2vw,1.4rem);font-style:italic;color:var(--muted);text-align:center;margin-top:3rem;max-width:600px;line-height:1.7}
+.gfv-play{position:absolute;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .4s}
+.gfv-play.gone{opacity:0;pointer-events:none}
+.gfv-pbtn{width:100px;height:100px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.4);backdrop-filter:blur(8px);transition:all .4s}
+.gfv-pbtn:hover{background:var(--gold);transform:scale(1.1)}
+.gfv-pbtn:hover svg path{fill:#000}
+.gfv-pbtn svg{width:36px;height:36px;margin-left:6px}
+.gfv-pbtn svg path{fill:var(--gold)}
+
+/* ===== BUTTERFLY FLOATING ===== */
+.bf-elem{position:absolute;pointer-events:none;font-size:clamp(16px,3vw,28px);z-index:3;opacity:0;animation:bfFly var(--dur,8s) ease-in-out var(--dly,0s) infinite}
+@keyframes bfFly{0%{transform:translateY(0) translateX(0) rotate(0);opacity:0}20%{opacity:.8}50%{transform:translateY(-80px) translateX(var(--dx,30px)) rotate(20deg);opacity:.6}80%{opacity:.3}100%{transform:translateY(-160px) translateX(var(--dx2,-20px)) rotate(-10deg);opacity:0}}
+
+/* ===== NEON EFFECTS FOR SMAASH ===== */
+.neon-pulse{animation:neonP 2s ease-in-out infinite alternate}
+@keyframes neonP{from{text-shadow:0 0 10px var(--coral),0 0 20px var(--coral),0 0 40px var(--coral)}to{text-shadow:0 0 20px var(--violet),0 0 40px var(--violet),0 0 80px var(--violet)}}
+.neon-border{box-shadow:0 0 20px rgba(255,107,74,.3),inset 0 0 20px rgba(255,107,74,.05)}
+
+/* ===== COUNTER ===== */
+.cnum{display:inline-block;font-variant-numeric:tabular-nums}
+
+/* ===== WATER OVERLAY ===== */
+.water-ov{position:absolute;inset:0;pointer-events:none;z-index:4;overflow:hidden}
+.water-ov::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,100,180,.08) 100%)}
+</style>
+</head>
+<body>
+
+<!-- ===== FIXED UI ===== -->
+<div id="cur"></div>
+<div id="cur-f"></div>
+<div id="prog"></div>
+<div id="noise"></div>
+<div class="vignette"></div>
+
+<!-- ===== LOADER ===== -->
+<div id="loader">
+  <div class="ld-title">MEMORIES</div>
+  <div class="ld-sub">Bhavani Island · Smaash · Butterflies</div>
+  <div class="ld-bar-w"><div class="ld-bar"></div></div>
+  <div class="ld-pct" id="ld-pct">0%</div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">JOURNEY</a>
+  <ul class="nav-chs">
+    <li><a href="#ch1">Island</a></li>
+    <li><a href="#ch3">Smaash</a></li>
+    <li><a href="#ch2">Butterflies</a></li>
+    <li><a href="#finale">Finale</a></li>
+  </ul>
+  <button class="nav-snd" id="snd-btn" onclick="toggleSound()">
+    <div class="snd-bars"><span></span><span></span><span></span><span></span></div>
+    <span>Sound</span>
+  </button>
+</nav>
+
+<!-- ===== CHAPTER DOTS ===== -->
+<div class="ch-dots">
+  <div class="ch-dot active" data-l="Intro" onclick="goTo('hero')"></div>
+  <div class="ch-dot" data-l="Island" onclick="goTo('ch1')"></div>
+  <div class="ch-dot" data-l="Smaash" onclick="goTo('ch3')"></div>
+  <div class="ch-dot" data-l="Butterflies" onclick="goTo('ch2')"></div>
+  <div class="ch-dot" data-l="Finale" onclick="goTo('finale')"></div>
+</div>
+
+<!-- ===== AUDIO ===== -->
+<audio id="bg-audio" loop>
+  <!-- <source src="audio/ambient.mp3" type="audio/mpeg"> -->
+</audio>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero">
+  <canvas id="hero-cv"></canvas>
+  <video class="hero-bg-v" autoplay muted loop playsinline>
+    <source src="VIDEOS/E(1).mp4" type="video/mp4">
+  </video>
+  <div class="hero-ov"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-cnt">
+    <div class="hero-eye">A Cinematic Memory &middot; One Amazing Day</div>
+    <h1 class="hero-ttl">MEMORIES<br><span class="gd">UNFORGETTABLE</span></h1>
+    <p class="hero-sub">Three worlds. Countless emotions. One day that changed everything.</p>
+    <!-- <div class="hero-meta">
+      <div class="hm-item"><span class="n">52</span><span class="l">Photos</span></div>
+      <div class="hm-item"><span class="n">31</span><span class="l">Videos</span></div>
+      <div class="hm-item"><span class="n">1</span><span class="l">Journey</span></div>
+    </div> -->
+    <div class="hero-div"></div>
+  </div>
+  <div class="scroll-h">
+    <div class="s-mouse"><div class="s-whl"></div></div>
+    <span class="s-txt">Begin the journey</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 1: BHAVANI ISLAND  (Photos A1–A17, Videos E1–E12)
+     ============================================================ -->
+<section id="ch1" class="ch-hdr t-island">
+  <div class="ch-num">01</div>
+  <canvas class="ch-cv" id="ch1-cv"></canvas>
+  <div class="ch-tag">Chapter One</div>
+  <h2 class="ch-ttl">BHAVANI<br>ISLAND</h2>
+  <p class="ch-dsc">Where the river meets the sky, and time slows down to match the current.</p>
+  <div class="ch-ln"></div>
+</section>
+
+<!-- Photo A(1) — Full Cinematic -->
+<div class="pf ps bf ll" id="isl-p1">
+  <img src="PHOTOS/A(1).jpg" alt="Bhavani Island Arrival" class="pi" loading="lazy">
+  <div class="pc"><span class="pc-t">First Steps on Sacred Waters</span><span class="pc-s">Bhavani Island · Arrival</span></div>
+</div>
+
+<!-- Story Block -->
+<div class="sb t-island">
+  <div class="sb-l">The Beginning</div>
+  <blockquote class="sb-q">"The river doesn't ask where you've been — it only knows where you're going."</blockquote>
+  <p class="sb-b">Bhavani Island greeted us the way nature always does — without fanfare, without pretense. The boat cut through the Krishna waters as if parting two worlds: the ordinary one we left behind, and this lush, breathing island that felt alive with memory.</p>
+</div>
+
+<div class="shim"></div>
+
+<!-- Photos A(2)–A(3) Duo -->
+<div class="pd t-island">
+  <div class="ps tl fb" id="isl-p2">
+    <img src="PHOTOS/A(2).jpg" alt="Bhavani Island Waters" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The River's Embrace</span><span class="pc-s">Krishna River · Morning</span></div>
+  </div>
+  <div class="ps tl fb" id="isl-p3">
+    <img src="PHOTOS/A(3).jpg" alt="Bhavani Island Shore" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Shores Untouched by Time</span><span class="pc-s">Island Shore · Golden Hour</span></div>
+  </div>
+</div>
+
+<!-- Video E(2) -->
+<div class="vs" id="isl-v1">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e2" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(2).mov" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e2" onclick="playVid('vid-e2','ov-e2')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t">ISLAND IN MOTION</div><div class="vc-s">A river journey through paradise — Bhavani Island</div></div>
+</div>
+
+<!-- Photos A(4)–A(6) Triptych -->
+<div class="pt t-island">
+  <div class="ps tl fb" style="--bx:80%;--by:20%">
+    <img src="PHOTOS/A(4).jpg" alt="Island Greenery" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Cathedral of Green</span><span class="pc-s">Island Forest · Noon</span></div>
+  </div>
+  <div class="ps scr">
+    <img src="PHOTOS/A(5).jpg" alt="Island Activity" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Joy Has No Address</span><span class="pc-s">Adventure Zone · Island</span></div>
+  </div>
+  <div class="ps tr">
+    <img src="PHOTOS/A(6).jpg" alt="Island View" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Horizon Without End</span><span class="pc-s">Sunset View · Island</span></div>
+  </div>
+</div>
+
+<!-- Caption Interlude 1 -->
+<div class="caption-il t-island">
+  <p class="cap-txt">"Moments become memories, memories become stories."</p>
+  <div class="cap-dot"></div>
+</div>
+
+<!-- Photo A(7) — Cinematic Wide -->
+<div class="pcn ps zb" id="isl-p7">
+  <img src="PHOTOS/A(7).jpg" alt="Bhavani Island Panorama" class="pi" loading="lazy">
+  <div class="pc"><span class="pc-t">The World at Our Feet</span><span class="pc-s">Panoramic · Bhavani Island</span></div>
+</div>
+
+<!-- Photos A(8)–A(10) Magazine Layout -->
+<div class="pmag t-island">
+  <div class="ps sl">
+    <img src="PHOTOS/A(17).jpg" alt="Island Feature" class="pi" loading="lazy" style="height:60vh">
+    <div class="pc"><span class="pc-t">Nature's Grand Stage</span><span class="pc-s">Feature View · Island</span></div>
+  </div>
+  <div class="ps sl">
+    <img src="PHOTOS/A(9).jpg" alt="Island Detail" class="pi" loading="lazy" style="height:40vh">
+    <div class="pc"><span class="pc-t">In the Details</span><span class="pc-s">Close Up · Island</span></div>
+  </div>
+  <div class="ps sr">
+    <img src="PHOTOS/A(10).jpg" alt="Island Moment" class="pi" loading="lazy" style="height:40vh">
+    <div class="pc"><span class="pc-t">Stolen Seconds</span><span class="pc-s">Candid · Island</span></div>
+  </div>
+</div>
+
+<!-- Video E(3) -->
+<div class="vs" id="isl-v2">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e3" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E1a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e3" onclick="playVid('vid-e3','ov-e3')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t">GLIDING THROUGH PARADISE</div><div class="vc-s">Every wave, a memory in the making</div></div>
+</div>
+
+<!-- Photos A(11)–A(14) Quad -->
+<div class="pq">
+  <div class="ps sl" style="height:50vh">
+    <img src="PHOTOS/A(11).jpg" alt="Island Lagoon" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Lagoon Light</span><span class="pc-s">Island · Reflections</span></div>
+  </div>
+  <div class="ps rt" style="height:50vh">
+    <img src="PHOTOS/A(12).jpg" alt="Island Fun" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Tilting Towards Joy</span><span class="pc-s">Island · Fun</span></div>
+  </div>
+  <div class="ps fu" style="height:50vh">
+    <img src="PHOTOS/A(13).jpg" alt="Island Candid" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The Rising Tide of Laughter</span><span class="pc-s">Island · Candid</span></div>
+  </div>
+  <div class="ps neon" style="height:50vh">
+    <img src="PHOTOS/A(14).jpg" alt="Island Evening" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Glowing in the River Light</span><span class="pc-s">Island · Evening</span></div>
+  </div>
+</div>
+
+<!-- Video E(4) -->
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e4" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E2a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e4" onclick="playVid('vid-e4','ov-e4')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t">WATER & WONDER</div><div class="vc-s">The island had a thousand ways to make us smile</div></div>
+</div>
+
+<!-- Caption Interlude 2 -->
+<div class="caption-il t-island">
+  <p class="cap-txt">"Every smile carried a thousand emotions."</p>
+  <div class="cap-dot"></div>
+</div>
+
+<!-- Photos A(15)–A(17) Wide Stack -->
+<div class="pw t-island">
+  <div class="ps pm kb ll" id="isl-main">
+    <img src="PHOTOS/A(15).jpg" alt="Island Feature" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Where the Heart Rests</span><span class="pc-s">Bhavani Island · The Moment</span></div>
+  </div>
+  <div class="ps sl" style="height:100%">
+    <img src="PHOTOS/A(16).jpg" alt="Island Detail" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Between the Leaves</span><span class="pc-s">Nature · Close</span></div>
+  </div>
+  <div class="ps sr" style="height:100%">
+    <img src="PHOTOS/A(17).jpg" alt="Island Farewell" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Until We Return</span><span class="pc-s">Island · Farewell</span></div>
+  </div>
+</div>
+
+<!-- Videos E(5)–E(12) Grid -->
+<div class="pd t-island">
+  <div class="vs" style="height:50vh">
+    <video id="vid-e5" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E3a.mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e5" onclick="playVid('vid-e5','ov-e5')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">DRIFT</div></div>
+  </div>
+  
+</div>
+
+<div class="pd t-island">
+  <div class="vs" style="height:50vh">
+    <video id="vid-e7" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E4a.mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e7" onclick="playVid('vid-e7','ov-e7')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">RIPPLE</div></div>
+  </div>
+  <!-- <div class="vs" style="height:50vh">
+    <video id="vid-e8" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E(8).mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e8" onclick="playVid('vid-e8','ov-e8')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">CURRENT</div></div>
+  </div> -->
+</div>
+
+<!-- <div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e9" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(9).mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e9" onclick="playVid('vid-e9','ov-e9')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t">THE ISLAND SPEAKS</div><div class="vc-s">Listen — can you hear the water telling stories?</div></div>
+</div>
+
+<div class="pd t-island">
+  <div class="vs" style="height:50vh">
+    <video id="vid-e10" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E(10).mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e10" onclick="playVid('vid-e10','ov-e10')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">HORIZON</div></div>
+  </div>
+  <div class="vs" style="height:50vh">
+    <video id="vid-e11" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E(11).mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e11" onclick="playVid('vid-e11','ov-e11')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">GOLDEN HOUR</div></div>
+  </div>
+</div> -->
+
+<!-- <div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e12" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(12).mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e12" onclick="playVid('vid-e12','ov-e12')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t">BHAVANI — GOODBYE</div><div class="vc-s">The island waved back as we left, carrying pieces of it with us</div></div>
+</div> -->
+
+<!-- Island Stats -->
+<!-- <div class="stats t-island">
+  <div class="st-i"><span class="st-n cnum" data-t="17">0</span><span class="st-l">Moments Captured</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="12">0</span><span class="st-l">Videos Filmed</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="1">0</span><span class="st-l">Sacred River</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="100">0</span><span class="st-l">% Unforgettable</span></div>
+</div> -->
+
+<!-- ============================================================
+     TRANSITION: ISLAND → SMAASH
+     ============================================================ -->
+<div class="ct-scene" style="background:radial-gradient(ellipse at center,#0a0020 0%,var(--deep) 70%)">
+  <canvas class="ch-cv" id="trans1-cv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+  <div class="ct-txt" id="trans1-txt" style="color:var(--electric)">NEXT STOP:<br>SMAASH ZONE</div>
+</div>
+
+<!-- ============================================================
+     CHAPTER 3: SMAASH ZONE  (Photos A18–A22, Videos E13–E24)
+     ============================================================ -->
+<section id="ch3" class="ch-hdr t-smaash">
+  <div class="ch-num">02</div>
+  <canvas class="ch-cv" id="ch3-cv"></canvas>
+  <div class="ch-tag">Chapter Two</div>
+  <h2 class="ch-ttl" style="color:var(--coral)">SMAASH<br><span style="color:var(--white)">ZONE</span></h2>
+  <p class="ch-dsc">Where neon dreams meet arcade legends, and every game is a new story to tell.</p>
+  <div class="ch-ln" style="background:var(--coral)"></div>
+</section>
+
+<!-- Photo A(18) Full -->
+<div class="pf ps glitch neon" id="sm-p1">
+  <img src="PHOTOS/A(18).jpg" alt="Smaash Zone Entrance" class="pi" loading="lazy">
+  <div class="pc"><span class="pc-t">Enter the Arena</span><span class="pc-s">Smaash Zone · Arrival</span></div>
+</div>
+
+<!-- Story Block Smaash -->
+<div class="sb t-smaash">
+  <div class="sb-l">The Arena</div>
+  <blockquote class="sb-q" style="color:var(--coral)">"In the arcade, every token is a heartbeat, every game a lifetime."</blockquote>
+  <p class="sb-b">Smaash Zone hit different. The neon glow, the sound of machines, the competitive fire in everyone's eyes — it was pure joy compressed into light and sound. We didn't just play games. We became them.</p>
+</div>
+
+<div class="shim"></div>
+
+<!-- Photos A(19)–A(20) Duo -->
+<div class="pd t-smaash">
+  <div class="ps rgb tl" id="sm-p2">
+    <img src="PHOTOS/A(21).jpg" alt="Smaash Bowling" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Strike Zone</span><span class="pc-s">Bowling · Smaash</span></div>
+  </div>
+  <div class="ps glitch tr" id="sm-p3">
+    <img src="PHOTOS/A(22).jpg" alt="Smaash Arcade" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Bowling Warriors</span><span class="pc-s">Scores</span></div>
+  </div>
+</div>
+
+<!-- Video E(13) -->
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e13" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E5a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e13" onclick="playVid('vid-e13','ov-e13')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:var(--coral)">GAME ON</div><div class="vc-s">The VR legends were born</div></div>
+</div>
+
+<!-- Photos A(21)–A(22) + Videos E(14)–E(16) -->
+<div class="pd t-smaash">
+  <div class="ps scr neon" id="sm-p4">
+    <img src="PHOTOS/A18.png" alt="Smaash Racing" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Speed of Light</span><span class="pc-s">VR Zone</span></div>
+  </div>
+  <div class="ps fu rgb" id="sm-p5">
+    <img src="PHOTOS/A19.jpg" alt="Smaash VR" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Virtual Frontiers</span><span class="pc-s">VR Zone · Smaash</span></div>
+  </div>
+</div>
+
+<!-- Caption Interlude -->
+<div class="caption-il t-smaash">
+  <p class="cap-txt" style="color:var(--coral)">"The best journeys are measured in memories, not miles."</p>
+  <div class="cap-dot" style="background:var(--coral)"></div>
+</div>
+
+<!-- Videos E(14)–E(19) -->
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e14" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E9a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e14" onclick="playVid('vid-e14','ov-e14')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:var(--coral)">ROLLING THUNDER · THE BOWLING</div><div class="vc-s">Every lane, a story. Every strike, a celebration.</div></div>
+</div>
+
+<div class="pd t-smaash">
+  <!-- <div class="vs" style="height:50vh">
+    <video id="vid-e15" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E8a.mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e15" onclick="playVid('vid-e15','ov-e15')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">NEON RUSH</div></div>
+  </div> -->
+  <div class="vs">
+    <div class="vlb"></div><div class="vlbb"></div>
+    <video id="vid-e17" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E8a.mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e17" onclick="playVid('vid-e17','ov-e17')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t" style="color:var(--coral)">The Thor's Hammer</div><div class="vc-s">Energy vs laughter</div></div>
+  </div>
+  <div class="vs" style="height:50vh">
+    <video id="vid-e16" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E6a.mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e16" onclick="playVid('vid-e16','ov-e16')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">PIXEL STORM</div></div>
+  </div>
+</div>
+
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e17" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E6a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e17" onclick="playVid('vid-e17','ov-e17')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:var(--coral)">LUCKY ROYALE</div><div class="vc-s">Skill, luck, and uncontrollable laughter</div></div>
+</div>
+
+
+
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e14" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E10a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e14" onclick="playVid('vid-e14','ov-e14')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:var(--coral)">ROLLING THUNDER · THE BOWLING</div><div class="vc-s">Every lane, a story. Every strike, a celebration.</div></div>
+</div>
+
+<div class="pf ps glitch neon" id="sm-p1">
+  <img src="PHOTOS/A(24).jpg" alt="Smaash Zone Entrance" class="pi" loading="lazy">
+  <div class="pc"><span class="pc-t">End of the Arena</span><span class="pc-s">Smaash Zone · Arrival</span></div>
+</div>
+
+<!-- <div class="pd t-smaash">
+  <div class="vs" style="height:50vh">
+    <video id="vid-e18" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E(18).mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e18" onclick="playVid('vid-e18','ov-e18')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">HIGH SCORE</div></div>
+  </div>
+  <div class="vs" style="height:50vh">
+    <video id="vid-e19" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E(19).mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e19" onclick="playVid('vid-e19','ov-e19')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">FULL THROTTLE</div></div>
+  </div>
+</div>
+
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e20" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(20).mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e20" onclick="playVid('vid-e20','ov-e20')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:var(--coral)">SQUAD GOALS</div><div class="vc-s">No one leaves until everyone wins</div></div>
+</div>
+
+<div class="pd t-smaash">
+  <div class="vs" style="height:50vh">
+    <video id="vid-e21" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E(21).mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e21" onclick="playVid('vid-e21','ov-e21')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">TOGETHER</div></div>
+  </div>
+  <div class="vs" style="height:50vh">
+    <video id="vid-e22" preload="none" loop muted playsinline>
+      <source src="VIDEOS/E(22).mp4" type="video/mp4">
+    </video>
+    <div class="vfg"></div>
+    <div class="vov" id="ov-e22" onclick="playVid('vid-e22','ov-e22')">
+      <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="vcb"><div class="vc-t">CHAMPIONS</div></div>
+  </div>
+</div>
+
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e23" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(23).mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e23" onclick="playVid('vid-e23','ov-e23')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:var(--coral)">ENTER THE MATRIX</div><div class="vc-s">Reality takes a backseat when friends are around</div></div>
+</div>
+
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e24" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(24).mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e24" onclick="playVid('vid-e24','ov-e24')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:var(--coral)">ONE MORE GAME</div><div class="vc-s">Famous last words — spoken by every single one of us</div></div>
+</div> -->
+
+<!-- Smaash Stats -->
+<!-- <div class="stats t-smaash">
+  <div class="st-i"><span class="st-n cnum" data-t="5">0</span><span class="st-l">Photos</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="12">0</span><span class="st-l">Videos Filmed</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="9999">0</span><span class="st-l">Points Scored</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="100">0</span><span class="st-l">% Smiles</span></div>
+</div> -->
+
+<!-- ============================================================
+     TRANSITION: SMAASH → BUTTERFLIES
+     ============================================================ -->
+<div class="ct-scene" style="background:radial-gradient(ellipse at center,#0a0a00 0%,var(--deep) 70%)">
+  <canvas class="ch-cv" id="trans2-cv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+  <div class="ct-txt" id="trans2-txt" style="color:#ffb347">FROM NEON<br>TO NATURE</div>
+</div>
+
+<!-- ============================================================
+     CHAPTER 2: BUTTERFLY EXHIBITION  (Photos A23–A52, Videos E25–E30)
+     ============================================================ -->
+<section id="ch2" class="ch-hdr t-butterfly">
+  <div class="ch-num">03</div>
+  <canvas class="ch-cv" id="ch2-cv"></canvas>
+  <!-- Floating butterfly elements -->
+  <div class="bf-elem" style="left:10%;top:20%;--dur:7s;--dly:0s;--dx:40px;--dx2:-30px">🦋</div>
+  <div class="bf-elem" style="left:30%;top:60%;--dur:9s;--dly:1s;--dx:-50px;--dx2:30px">🦋</div>
+  <div class="bf-elem" style="left:60%;top:30%;--dur:6s;--dly:2s;--dx:30px;--dx2:-40px">🦋</div>
+  <div class="bf-elem" style="left:80%;top:70%;--dur:8s;--dly:.5s;--dx:-40px;--dx2:20px">🦋</div>
+  <div class="bf-elem" style="left:50%;top:45%;--dur:10s;--dly:1.5s;--dx:50px;--dx2:-20px">🦋</div>
+  <div class="ch-tag">Chapter Three</div>
+  <h2 class="ch-ttl" style="background:linear-gradient(135deg,#ffb347,#ff6b8a,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">BUTTERFLY<br>EXHIBITION</h2>
+  <p class="ch-dsc">A garden where reality dissolved into color, where every wing carried a universe of wonder.</p>
+  <div class="ch-ln" style="background:linear-gradient(90deg,#ffb347,#ff6b8a)"></div>
+</section>
+
+<!-- Photo A(23) — Full -->
+<div class="pf ps bf ll" id="bf-p1">
+  <img src="PHOTOS/A(26).jpg" alt="Butterfly Exhibition Entrance" class="pi" loading="lazy">
+  <div class="pc"><span class="pc-t">Wings of Another World</span><span class="pc-s">Butterfly Exhibition · Entrance</span></div>
+</div>
+
+<!-- Story Block Butterflies -->
+<div class="sb t-butterfly">
+  <div class="sb-l">The Magic Garden</div>
+  <blockquote class="sb-q" style="background:linear-gradient(135deg,#ffb347,#ff6b8a);-webkit-background-clip:text;-webkit-text-fill-color:transparent">"Some places don't just fill your eyes — they fill your soul with color."</blockquote>
+  <p class="sb-b">Walking into the Butterfly Exhibition was like stepping through a painting. Hundreds of wings in flight, colors so vivid they seemed to hum with their own light. For a few hours, we didn't just see beauty — we breathed it.</p>
+</div>
+
+<div class="shim" style="background:linear-gradient(90deg,transparent,#ffb347,transparent)"></div>
+
+<!-- Photos A(24)–A(25) Duo -->
+<div class="pd t-butterfly">
+  <div class="ps scr" id="bf-p2">
+    <img src="PHOTOS/A(29).jpg" alt="Butterfly Close Up" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The Eye of a Wing</span><span class="pc-s">Macro · Color</span></div>
+  </div>
+  <div class="ps scr" id="bf-p3">
+    <img src="PHOTOS/A(32).jpg" alt="Butterfly Garden" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Garden of Living Jewels</span><span class="pc-s">Exhibition · Garden</span></div>
+  </div>
+</div>
+
+<!-- Video E(25) -->
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e25" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E12a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e25" onclick="playVid('vid-e25','ov-e25')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:#ffb347">WINGS IN FLIGHT</div><div class="vc-s">A thousand stories, each written on a different wing</div></div>
+</div>
+
+<!-- Photos A(26)–A(28) Triptych -->
+<div class="pt t-butterfly">
+  <div class="ps zb">
+    <img src="PHOTOS/A(55).jpg" alt="Butterfly on Flower" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">A Gentle Landing</span><span class="pc-s">Butterfly · Bloom</span></div>
+  </div>
+  <div class="ps fu">
+    <img src="PHOTOS/A(48).jpg" alt="Butterfly Colors" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Painted by Nature</span><span class="pc-s">Color · Wing Pattern</span></div>
+  </div>
+  <div class="ps rt">
+    <img src="PHOTOS/A(40).jpg" alt="Garden Path" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The Path Through Wonder</span><span class="pc-s">Garden · Walk</span></div>
+  </div>
+</div>
+
+<!-- Caption Interlude 3 -->
+<div class="caption-il t-butterfly">
+  <p class="cap-txt" style="background:linear-gradient(135deg,#ffb347,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">"Some days deserve to be relived forever."</p>
+  <div class="cap-dot" style="background:#ffb347"></div>
+</div>
+
+<!-- Photos A(29)–A(32) Quad -->
+<div class="pq">
+  <div class="ps tr" style="height:50vh">
+    <img src="PHOTOS/A(29).jpg" alt="Butterfly Wing" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Stained Glass Wings</span><span class="pc-s">Detail · Nature</span></div>
+  </div>
+  <div class="ps tl ll" style="height:50vh">
+    <img src="PHOTOS/A(30).jpg" alt="Butterfly Garden" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The Living Mosaic</span><span class="pc-s">Garden · Butterflies</span></div>
+  </div>
+  <div class="ps tl ll" style="height:50vh">
+    <img src="PHOTOS/A(31).jpg" alt="Butterfly Portrait" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Portrait of Flight</span><span class="pc-s">Close · Wing</span></div>
+  </div>
+  <div class="ps tr" style="height:50vh">
+    <img src="PHOTOS/A(32).jpg" alt="Butterfly Group" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The Gathering</span><span class="pc-s">Swarm · Together</span></div>
+  </div>
+</div>
+
+<!-- Video E(26) -->
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e26" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E11a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e26" onclick="playVid('vid-e26','ov-e26')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:#ffb347">THE DANCE OF A THOUSAND WINGS</div><div class="vc-s">Nature's most beautiful choreography, performed just for us</div></div>
+</div>
+
+<!-- Photos A(33)–A(35) Magazine -->
+<div class="pmag t-butterfly">
+  <div class="ps sl" style="height:60vh">
+    <img src="PHOTOS/A(67).jpg" alt="Exhibition Feature" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The Main Stage</span><span class="pc-s">Exhibition · Feature</span></div>
+  </div>
+  <!-- <div class="ps sl" style="height:40vh">
+    <img src="PHOTOS/A(34).jpg" alt="Butterfly Detail" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">In Every Detail</span><span class="pc-s">Macro · Wing</span></div>
+  </div>
+  <div class="ps sr" style="height:40vh">
+    <img src="PHOTOS/A(35).jpg" alt="Garden Moment" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Paused in Paradise</span><span class="pc-s">Garden · Still</span></div>
+  </div> -->
+</div>
+
+<!-- Photo A(36) Wide Cinematic -->
+<div class="pcn ps kb bf">
+  <img src="PHOTOS/A(73).jpg" alt="Butterfly Panorama" class="pi" loading="lazy">
+  <div class="pc"><span class="pc-t">A World of Wings</span><span class="pc-s">Panoramic · Exhibition</span></div>
+</div>
+
+<!-- Photos A(37)–A(38) Duo -->
+<div class="pd t-butterfly">
+  <div class="ps zb">
+    <img src="PHOTOS/A(70).jpg" alt="Butterfly Flight" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Freedom Defined</span><span class="pc-s">In Flight · Wings</span></div>
+  </div>
+  <div class="ps scr ll">
+    <img src="PHOTOS/A(71).jpg" alt="Garden Colors" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Color Has No Limits</span><span class="pc-s">Garden · Palette</span></div>
+  </div>
+</div>
+
+<!-- Video E(27) -->
+<!-- <div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e27" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(27).mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e27" onclick="playVid('vid-e27','ov-e27')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:#ffb347">MAGIC IN MOTION</div><div class="vc-s">Every second felt like a blessing in disguise</div></div>
+</div> -->
+
+<!-- Photos A(39)–A(42) Quad -->
+<!-- <div class="pq">
+  <div class="ps fu" style="height:50vh">
+    <img src="PHOTOS/A(39).jpg" alt="Butterfly Garden" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Rising Into Light</span><span class="pc-s">Garden · Upward</span></div>
+  </div>
+  <div class="ps wh" style="height:50vh">
+    <img src="PHOTOS/A(40).jpg" alt="Butterfly Wing" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Across the Canvas</span><span class="pc-s">Wing · Reveal</span></div>
+  </div>
+  <div class="ps rt" style="height:50vh">
+    <img src="PHOTOS/A(41).jpg" alt="Butterfly Spin" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Spinning Into Forever</span><span class="pc-s">Flight · Spiral</span></div>
+  </div>
+  <div class="ps iris" style="height:50vh">
+    <img src="PHOTOS/A(42).jpg" alt="Butterfly Circle" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The Circle of Wonder</span><span class="pc-s">Exhibition · Circle</span></div>
+  </div>
+</div> -->
+
+<!-- Caption Interlude 4 -->
+<div class="caption-il t-butterfly">
+  <p class="cap-txt">"Time moved forward, but these moments stayed."</p>
+  <div class="cap-dot" style="background:#a855f7"></div>
+</div>
+
+<!-- Video E(28)
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e28" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(28).mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e28" onclick="playVid('vid-e28','ov-e28')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:#a855f7">DREAMSCAPE</div><div class="vc-s">We didn't just visit a garden — we became part of one</div></div>
+</div> -->
+
+<!-- Photos A(43)–A(48) Masonry -->
+<!-- <div class="masonry t-butterfly">
+  <div class="ps bf" style="height:260px">
+    <img src="PHOTOS/A(43).jpg" alt="Butterfly" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Jewel of the Air</span><span class="pc-s">Wing · Close</span></div>
+  </div>
+  <div class="ps iris" style="height:300px">
+    <img src="PHOTOS/A(44).jpg" alt="Garden" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Garden's Secret</span><span class="pc-s">Hidden · Beauty</span></div>
+  </div>
+  <div class="ps zb" style="height:240px">
+    <img src="PHOTOS/A(45).jpg" alt="Flight" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Burst Into Sky</span><span class="pc-s">Zoom · Flight</span></div>
+  </div>
+  <div class="ps tl" style="height:280px">
+    <img src="PHOTOS/A(46).jpg" alt="Color" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Tilted Brilliance</span><span class="pc-s">Color · Tilt</span></div>
+  </div>
+  <div class="ps fu ll" style="height:260px">
+    <img src="PHOTOS/A(47).jpg" alt="Wings" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Light from Within</span><span class="pc-s">Glow · Wings</span></div>
+  </div>
+  <div class="ps scr" style="height:290px">
+    <img src="PHOTOS/A(48).jpg" alt="Garden Beauty" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Scale of Wonder</span><span class="pc-s">Wide · Garden</span></div>
+  </div>
+</div> -->
+
+<!-- Video E(29) -->
+<!-- <div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e29" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E(29).mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e29" onclick="playVid('vid-e29','ov-e29')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:#ffb347">BLOOM AND FLOAT</div><div class="vc-s">The most beautiful things in life never stay long enough</div></div>
+</div> -->
+
+<!-- Photos A(49)–A(52) Final Butterfly Photos -->
+<!-- <div class="pt t-butterfly">
+  <div class="ps kb ll">
+    <img src="PHOTOS/A(49).jpg" alt="Butterfly Exhibition" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">The Last Garden</span><span class="pc-s">Exhibition · Final</span></div>
+  </div>
+  <div class="ps wh">
+    <img src="PHOTOS/A(50).jpg" alt="Butterfly" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Across the Frame</span><span class="pc-s">Wing · Wipe</span></div>
+  </div>
+  <div class="ps wd">
+    <img src="PHOTOS/A(51).jpg" alt="Garden End" class="pi" loading="lazy">
+    <div class="pc"><span class="pc-t">Corner of Beauty</span><span class="pc-s">Garden · Diagonal</span></div>
+  </div>
+</div> -->
+
+<!-- Photo A(52) — Grand Final Photo -->
+<div class="ps tl" id="bf-final">
+  <img src="PHOTOS/A(26).jpg" alt="Butterfly Exhibition Final" class="pi" loading="lazy">
+  <div class="pc"><span class="pc-t">The Last Wing</span><span class="pc-s">Exhibition Farewell</span></div>
+</div>
+
+<!-- Video E(30) — Butterfly Farewell -->
+<div class="vs">
+  <div class="vlb"></div><div class="vlbb"></div>
+  <video id="vid-e30" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E14a.mp4" type="video/mp4">
+  </video>
+  <div class="vfg"></div>
+  <div class="vov" id="ov-e30" onclick="playVid('vid-e30','ov-e30')">
+    <div class="vpb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+  </div>
+  <div class="vcb"><div class="vc-t" style="color:#ffb347">GOODBYE, GARDEN</div><div class="vc-s">We left the butterflies behind, but they stayed inside us</div></div>
+</div>
+
+<!-- Butterfly Stats -->
+<!-- <div class="stats t-butterfly">
+  <div class="st-i"><span class="st-n cnum" data-t="30">0</span><span class="st-l">Photos</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="6">0</span><span class="st-l">Videos Filmed</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="500">0</span><span class="st-l">Wings Witnessed</span></div>
+  <div class="st-i"><span class="st-n cnum" data-t="100">0</span><span class="st-l">% Pure Magic</span></div>
+</div> -->
+
+<!-- ============================================================
+     GRAND MEMORY VIDEO — E(31)
+     ============================================================ -->
+<div class="gfv" id="grand-vid">
+  <video id="vid-e31" preload="none" loop muted playsinline>
+    <source src="VIDEOS/E13a.mp4" type="video/mp4">
+  </video>
+  <div class="gfv-ov"></div>
+  <div class="gfv-lb"></div>
+  <div class="gfv-lbb"></div>
+  <div class="gfv-cnt">
+    <div class="gfv-ttl">ONE DAY.<br><span style="color:var(--gold)">ONE LIFE.</span></div>
+    <div class="gfv-sub">Bhavani Island · Smaash Zone · Butterfly Exhibition</div>
+    <div class="gfv-q">"The best journeys don't end when you go home — they live on in every story you tell, every smile you share, every quiet moment you replay in your heart."</div>
+  </div>
+  <div class="gfv-play" id="gfv-play" onclick="playGrandVid()">
+    <div class="gfv-pbtn">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FINALE
+     ============================================================ -->
+<section id="finale">
+  <canvas id="finale-cv"></canvas>
+
+  <!-- Floating hearts -->
+  <div class="fin-hrt" style="left:15%;bottom:20%;--dur:6s;--dly:0s;--rot:-15deg;font-size:24px">❤️</div>
+  <div class="fin-hrt" style="left:30%;bottom:30%;--dur:8s;--dly:1s;--rot:10deg;font-size:18px">❤️</div>
+  <div class="fin-hrt" style="left:55%;bottom:25%;--dur:7s;--dly:.5s;--rot:-8deg;font-size:30px">❤️</div>
+  <div class="fin-hrt" style="left:70%;bottom:15%;--dur:9s;--dly:2s;--rot:20deg;font-size:20px">❤️</div>
+  <div class="fin-hrt" style="left:85%;bottom:35%;--dur:5s;--dly:1.5s;--rot:-25deg;font-size:16px">❤️</div>
+  <div class="fin-hrt" style="left:42%;bottom:10%;--dur:10s;--dly:.3s;--rot:5deg;font-size:22px">💛</div>
+
+  <div class="fin-div"></div>
+  <h2 class="fin-ttl">EVERY ENDING IS<br><span style="color:var(--gold)">A BEAUTIFUL MEMORY</span></h2>
+  <p class="fin-sub">Bhavani Island · Smaash Zone · Butterfly Exhibition</p>
+
+  <!-- Memory Counter -->
+  <!-- <div class="fin-ctr">
+    <div class="fin-ct-i" style="--d:.3s">
+      <span class="fin-ct-n cnum" data-t="52">0</span>
+      <span class="fin-ct-l">Photos</span>
+    </div>
+    <div class="fin-ct-i" style="--d:.5s">
+      <span class="fin-ct-n cnum" data-t="31">0</span>
+      <span class="fin-ct-l">Videos</span>
+    </div>
+    <div class="fin-ct-i" style="--d:.7s">
+      <span class="fin-ct-n cnum" data-t="1">0</span>
+      <span class="fin-ct-l">Amazing Journey</span>
+    </div>
+    <div class="fin-ct-i" style="--d:.9s">
+      <span class="fin-ct-n cnum" data-t="3">0</span>
+      <span class="fin-ct-l">Worlds Explored</span>
+    </div>
+  </div> -->
+
+  <div style="height:3rem"></div>
+  <div class="fin-div"></div>
+
+  <p class="fin-cr">Crafted with love · Every memory is a masterpiece · Some days deserve to be relived forever</p>
+</section>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+/* ===== UTILS ===== */
+const $  = (s,c=document) => c.querySelector(s);
+const $$ = (s,c=document) => [...c.querySelectorAll(s)];
+const rand = (mn,mx) => Math.random()*(mx-mn)+mn;
+const rInt = (mn,mx) => Math.floor(rand(mn,mx+1));
+const lerp = (a,b,t) => a+(b-a)*t;
+
+/* ===== LOADER ===== */
+!(function(){
+  const loader=$('#loader'), pct=$('#ld-pct');
+  let p=0;
+  const iv=setInterval(()=>{
+    p+=rand(2,8);
+    if(p>=100){p=100;clearInterval(iv);if(pct)pct.textContent='100%';
+      setTimeout(()=>{loader.classList.add('gone');initAll();},700);}
+    if(pct)pct.textContent=Math.floor(p)+'%';
+  },80);
+})();
+
+/* ===== INIT ===== */
+function initAll(){
+  initCursor();
+  initProgress();
+  initNav();
+  initIO();
+  initHeroCanvas();
+  initChapterCanvases();
+  initTransCanvases();
+  initFinaleCanvas();
+  initCounters();
+  initVideoAutoplay();
+  initParallax();
+  spawnHeroParticles();
+}
+
+/* ===== CURSOR ===== */
+function initCursor(){
+  const c=$('#cur'),f=$('#cur-f');
+  if(!c||!f)return;
+  let mx=0,my=0,fx=0,fy=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  (function loop(){c.style.left=mx+'px';c.style.top=my+'px';
+    fx=lerp(fx,mx,.12);fy=lerp(fy,my,.12);
+    f.style.left=fx+'px';f.style.top=fy+'px';
+    requestAnimationFrame(loop);})();
+  $$('a,button,.ps,.vpb,.gfv-pbtn').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{c.style.transform='translate(-50%,-50%) scale(2)';f.style.transform='translate(-50%,-50%) scale(1.5)';});
+    el.addEventListener('mouseleave',()=>{c.style.transform='translate(-50%,-50%) scale(1)';f.style.transform='translate(-50%,-50%) scale(1)';});
+  });
+}
+
+/* ===== SCROLL PROGRESS ===== */
+function initProgress(){
+  const bar=$('#prog');
+  if(!bar)return;
+  window.addEventListener('scroll',()=>{
+    const pct=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);
+    bar.style.width=(pct*100)+'%';
+  },{passive:true});
+}
+
+/* ===== NAV ===== */
+function initNav(){
+  const nav=$('#nav');
+  if(!nav)return;
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80),{passive:true});
+}
+
+/* ===== GO TO ===== */
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+
+/* ===== INTERSECTION OBSERVER ===== */
+function initIO(){
+  // Animation trigger classes
+  const animCls=['bf','zb','sl','sr','scr','tl','tr','wh','wd','rt','fu','iris','neon','ll','fb',
+    'sb-l','sb-q','sb-b','ch-tag','ch-ttl','ch-dsc','ch-ln','cap-txt','cap-dot',
+    'vs','ps','fin-ttl','fin-sub','fin-ct-i','fin-cr'];
+
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        // Stagger children
+        const kids=e.target.querySelectorAll('.ps,.st-i,.fin-ct-i');
+        kids.forEach((k,i)=>setTimeout(()=>k.classList.add('in-view'),i*120));
+      }
+    });
+  },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+
+  animCls.forEach(cls=>$$(`.${cls}`).forEach(el=>obs.observe(el)));
+
+  // Chapter header stagger
+  $$('.ch-tag,.ch-ttl,.ch-dsc,.ch-ln').forEach((el,i)=>{el.style.transitionDelay=(i*.2)+'s';obs.observe(el);});
+
+  // Dot chapter tracking
+  const chIds=['hero','ch1','ch3','ch2','finale'];
+  const dots=$$('.ch-dot');
+  const secObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const idx=chIds.indexOf(e.target.id);
+        if(idx>=0) dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+      }
+    });
+  },{threshold:.4});
+  chIds.forEach(id=>{const el=document.getElementById(id);if(el)secObs.observe(el);});
+
+  // Transition text reveal
+  ['trans1-txt','trans2-txt'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    el.style.transform='translateY(30px)';
+    const o=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){el.style.transition='opacity 1.5s ease,transform 1.5s ease';el.style.opacity='1';el.style.transform='translateY(0)';}
+      });
+    },{threshold:.3});
+    o.observe(el);
+  });
+}
+
+/* ===== VIDEO PLAY ===== */
+function playVid(vidId,ovId){
+  const v=document.getElementById(vidId),ov=document.getElementById(ovId);
+  if(v){v.play().catch(()=>{});}
+  if(ov)ov.classList.add('playing');
+}
+
+function playGrandVid(){
+  const v=$('#vid-e31'),btn=$('#gfv-play');
+  if(v){v.play().catch(()=>{});}
+  if(btn)btn.classList.add('gone');
+}
+
+/* ===== VIDEO AUTOPLAY ON SCROLL ===== */
+function initVideoAutoplay(){
+  const scenes=$$('.vs,.gfv');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      const v=e.target.querySelector('video');
+      if(!v)return;
+      if(e.isIntersecting){v.play().catch(()=>{});e.target.classList.add('in-view');}
+      else v.pause();
+    });
+  },{threshold:.3});
+  scenes.forEach(s=>obs.observe(s));
+
+  // Sound viz animation
+  $$('.sviz').forEach(sv=>{
+    const bars=sv.querySelectorAll('span');
+    setInterval(()=>bars.forEach(b=>b.style.height=rand(4,20)+'px'),150);
+  });
+}
+
+/* ===== COUNTERS ===== */
+function initCounters(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting)return;
+      const el=e.target,tgt=parseInt(el.dataset.t)||0;
+      let cur=0;const step=Math.max(1,Math.ceil(tgt/60));
+      const iv=setInterval(()=>{cur=Math.min(cur+step,tgt);el.textContent=cur.toLocaleString();if(cur>=tgt)clearInterval(iv);},25);
+      obs.unobserve(el);
+    });
+  },{threshold:.5});
+  $$('.cnum').forEach(c=>obs.observe(c));
+}
+
+/* ===== PARALLAX ===== */
+function initParallax(){
+  window.addEventListener('scroll',()=>{
+    const sy=window.scrollY;
+    const hc=$('.hero-cnt');
+    if(hc)hc.style.transform=`translateY(${sy*.3}px)`;
+    $$('.ch-num').forEach(el=>{
+      const r=el.parentElement?.getBoundingClientRect();
+      if(r)el.style.transform=`translate(-50%,calc(-50% + ${r.top*.15}px))`;
+    });
+  },{passive:true});
+}
+
+/* ===== TILT EFFECT ON PHOTO SCENES ===== */
+document.addEventListener('mousemove',e=>{
+  $$('.ps').forEach(scene=>{
+    const r=scene.getBoundingClientRect();
+    if(e.clientX>r.left&&e.clientX<r.right&&e.clientY>r.top&&e.clientY<r.bottom){
+      const cx=r.left+r.width/2,cy=r.top+r.height/2;
+      const dx=(e.clientX-cx)/r.width,dy=(e.clientY-cy)/r.height;
+      scene.style.transform=`perspective(1200px) rotateY(${dx*4}deg) rotateX(${-dy*4}deg) scale(1.01)`;
+    }
+  });
+},{passive:true});
+$$('.ps').forEach(s=>s.addEventListener('mouseleave',()=>{s.style.transform='';s.style.transition='transform .5s ease';},{passive:true}));
+
+/* ===== SOUND TOGGLE ===== */
+function toggleSound(){
+  const a=$('#bg-audio');
+  if(!a)return;
+  if(a.paused)a.play().catch(()=>{});else a.pause();
+}
+
+/* ===== KEYBOARD NAV ===== */
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowDown')window.scrollBy({top:window.innerHeight*.7,behavior:'smooth'});
+  if(e.key==='ArrowUp')window.scrollBy({top:-window.innerHeight*.7,behavior:'smooth'});
+});
+
+/* ===== SCROLL VELOCITY BLUR ===== */
+let _sy=0;
+window.addEventListener('scroll',()=>{
+  const v=Math.abs(window.scrollY-_sy);_sy=window.scrollY;
+  if(v>30)document.body.style.filter=`blur(${Math.min(v*.025,1)}px)`;
+  else document.body.style.filter='';
+},{passive:true});
+
+/* ===== HERO CANVAS ===== */
+function initHeroCanvas(){
+  const cv=$('#hero-cv');if(!cv)return;
+  const ctx=cv.getContext('2d');let W,H,pts=[];
+  function rsz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+  rsz();window.addEventListener('resize',rsz,{passive:true});
+
+  class P{
+    reset(){this.x=rand(0,W);this.y=rand(0,H);this.vx=rand(-.3,.3);this.vy=rand(-.6,-.1);this.sz=rand(.5,2.5);this.life=0;this.max=rand(120,300);this.g=Math.random()>.7;}
+    constructor(){this.reset();}
+    update(){this.x+=this.vx;this.y+=this.vy;this.life++;if(this.life>this.max||this.y<-10)this.reset();}
+    draw(){const a=Math.sin((this.life/this.max)*Math.PI)*.8;ctx.beginPath();ctx.arc(this.x,this.y,this.sz,0,Math.PI*2);ctx.fillStyle=this.g?`rgba(200,169,110,${a})`:`rgba(200,220,255,${a*.4})`;ctx.fill();}
+  }
+  for(let i=0;i<180;i++)pts.push(new P());
+
+  const stars=Array.from({length:220},()=>({x:rand(0,1200),y:rand(0,800),r:rand(.3,1.2),a:rand(.1,.6),bl:rand(.002,.01)}));
+  let t=0;
+  (function loop(){
+    ctx.clearRect(0,0,W,H);
+    stars.forEach(s=>{
+      if(!s.x)s.x=rand(0,W);if(!s.y)s.y=rand(0,H);
+      const a=s.a+Math.sin(t*s.bl*60)*.3;
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${a})`;ctx.fill();
+    });
+    pts.forEach(p=>{p.update();p.draw();});
+    t++;requestAnimationFrame(loop);
+  })();
+}
+
+/* ===== HERO PARTICLES ===== */
+function spawnHeroParticles(){
+  const hero=$('#hero');if(!hero)return;
+  for(let i=0;i<18;i++){
+    const p=document.createElement('div');
+    p.className='hero-part';
+    const sz=rand(2,8);
+    p.style.cssText=`width:${sz}px;height:${sz}px;left:${rand(5,95)}%;top:${rand(10,90)}%;background:rgba(200,169,110,${rand(.1,.5)});--dur:${rand(5,12)}s;--dly:${rand(0,4)}s;--dy:${rand(-60,-20)}px;--dx:${rand(-30,30)}px;--opa:${rand(.2,.6)};`;
+    hero.appendChild(p);
+  }
+}
+
+/* ===== CHAPTER CANVASES ===== */
+function initChapterCanvases(){
+  initWaterCanvas('ch1-cv');
+  initButterflyCanvas('ch2-cv');
+  initNeonCanvas('ch3-cv');
+}
+
+function initWaterCanvas(id){
+  const cv=document.getElementById(id);if(!cv)return;
+  const ctx=cv.getContext('2d');let W,H;
+  const rsz=()=>{W=cv.width=cv.offsetWidth||window.innerWidth;H=cv.height=cv.offsetHeight||window.innerHeight;};
+  rsz();const ro=new ResizeObserver(rsz);ro.observe(cv);
+  const rings=[];let t=0;
+  setInterval(()=>rings.push({x:rand(W*.1,W*.9),y:rand(H*.1,H*.9),r:0,life:0,max:rand(80,140)}),600);
+  (function loop(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<8;i++){const y=(H/8)*i+Math.sin(t*.02+i)*10;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.strokeStyle=`rgba(0,180,216,${.03+Math.sin(t*.05+i)*.02})`;ctx.lineWidth=1;ctx.stroke();}
+    rings.forEach((rn,idx)=>{rn.r+=2.5;rn.life++;const a=1-rn.life/rn.max;ctx.beginPath();ctx.arc(rn.x,rn.y,rn.r,0,Math.PI*2);ctx.strokeStyle=`rgba(0,180,216,${a*.3})`;ctx.lineWidth=1;ctx.stroke();if(rn.life>rn.max)rings.splice(idx,1);});
+    t++;requestAnimationFrame(loop);
+  })();
+}
+
+function initButterflyCanvas(id){
+  const cv=document.getElementById(id);if(!cv)return;
+  const ctx=cv.getContext('2d');let W,H;
+  const rsz=()=>{W=cv.width=cv.offsetWidth||window.innerWidth;H=cv.height=cv.offsetHeight||window.innerHeight;};
+  rsz();const ro=new ResizeObserver(rsz);ro.observe(cv);
+  const dots=Array.from({length:70},()=>({x:rand(0,1200),y:rand(0,800),vx:rand(-.5,.5),vy:rand(-.8,-.1),sz:rand(2,7),hue:rInt(20,60),life:0,max:rand(200,400)}));
+  let t=0;
+  (function loop(){
+    ctx.clearRect(0,0,W,H);
+    dots.forEach(d=>{
+      d.x+=d.vx+Math.sin(t*.02+d.y*.01)*.3;d.y+=d.vy;d.life++;
+      if(d.life>d.max||d.y<-10){d.x=rand(0,W);d.y=H+10;d.life=0;d.hue=rInt(20,60);}
+      const a=Math.sin((d.life/d.max)*Math.PI)*.7;
+      ctx.save();ctx.translate(d.x,d.y);ctx.fillStyle=`hsla(${d.hue},80%,60%,${a})`;
+      ctx.beginPath();ctx.ellipse(-d.sz,0,d.sz*1.5,d.sz*.8,-Math.PI/4,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.ellipse(d.sz,0,d.sz*1.5,d.sz*.8,Math.PI/4,0,Math.PI*2);ctx.fill();
+      ctx.restore();
+    });
+    t++;requestAnimationFrame(loop);
+  })();
+}
+
+function initNeonCanvas(id){
+  const cv=document.getElementById(id);if(!cv)return;
+  const ctx=cv.getContext('2d');let W,H;
+  const rsz=()=>{W=cv.width=cv.offsetWidth||window.innerWidth;H=cv.height=cv.offsetHeight||window.innerHeight;};
+  rsz();const ro=new ResizeObserver(rsz);ro.observe(cv);
+  const lines=Array.from({length:14},(_,i)=>({ang:(i/14)*Math.PI*2,spd:rand(.003,.009),col:i%3===0?'rgba(255,60,107,':i%3===1?'rgba(123,47,255,':'rgba(0,255,224,'}));
+  let t=0;
+  (function loop(){
+    ctx.clearRect(0,0,W,H);
+    const cx=W/2,cy=H/2;
+    lines.forEach(l=>{
+      l.ang+=l.spd;
+      const x1=cx+Math.cos(l.ang)*Math.min(W,H)*.7,y1=cy+Math.sin(l.ang)*Math.min(W,H)*.7;
+      const gr=ctx.createLinearGradient(cx,cy,x1,y1);
+      gr.addColorStop(0,l.col+'0)');gr.addColorStop(.5,l.col+'.08)');gr.addColorStop(1,l.col+'0)');
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(x1,y1);ctx.strokeStyle=gr;ctx.lineWidth=1;ctx.stroke();
+    });
+    const sp=50;ctx.strokeStyle='rgba(255,60,107,.025)';ctx.lineWidth=1;
+    for(let x=0;x<W;x+=sp){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(let y=0;y<H;y+=sp){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+    t++;requestAnimationFrame(loop);
+  })();
+}
+
+/* ===== TRANSITION CANVASES ===== */
+function initTransCanvases(){
+  initStarfieldCanvas('trans1-cv');
+  initEmberCanvas('trans2-cv');
+}
+
+function initStarfieldCanvas(id){
+  const cv=document.getElementById(id);if(!cv)return;
+  const ctx=cv.getContext('2d');let W,H;
+  const rsz=()=>{W=cv.width=cv.offsetWidth||window.innerWidth;H=cv.height=cv.offsetHeight||window.innerHeight;};
+  rsz();const ro=new ResizeObserver(rsz);ro.observe(cv);
+  const stars=Array.from({length:300},()=>({x:0,y:0,z:rand(0,800),spd:rand(1,4)}));
+  let t=0;
+  (function loop(){
+    ctx.fillStyle='rgba(0,0,0,.2)';ctx.fillRect(0,0,W,H);
+    const cx=W/2,cy=H/2;
+    stars.forEach(s=>{
+      if(s.z===0){s.x=rand(-W,W);s.y=rand(-H,H);s.z=800;}
+      s.z-=s.spd;if(s.z<=0){s.x=rand(-W,W);s.y=rand(-H,H);s.z=800;}
+      const sx=(s.x/s.z)*W*.5+cx,sy=(s.y/s.z)*H*.5+cy;
+      const sr=Math.max(0,(1-s.z/800))*2.5,a=1-s.z/800;
+      ctx.beginPath();ctx.arc(sx,sy,sr,0,Math.PI*2);ctx.fillStyle=`rgba(0,255,224,${a})`;ctx.fill();
+    });
+    t++;requestAnimationFrame(loop);
+  })();
+}
+
+function initEmberCanvas(id){
+  const cv=document.getElementById(id);if(!cv)return;
+  const ctx=cv.getContext('2d');let W,H;
+  const rsz=()=>{W=cv.width=cv.offsetWidth||window.innerWidth;H=cv.height=cv.offsetHeight||window.innerHeight;};
+  rsz();const ro=new ResizeObserver(rsz);ro.observe(cv);
+  const emb=Array.from({length:100},()=>({x:rand(0,1200),y:rand(400,600),vy:rand(-2,-.5),vx:rand(-.5,.5),life:0,max:rand(80,200),sz:rand(1,4),hue:rInt(20,50)}));
+  (function loop(){
+    ctx.clearRect(0,0,W,H);
+    const gr=ctx.createRadialGradient(W/2,H,0,W/2,H,H*.6);
+    gr.addColorStop(0,'rgba(255,179,71,.12)');gr.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
+    emb.forEach(e=>{
+      if(!e.x)e.x=rand(0,W);
+      e.x+=e.vx+Math.sin(e.life*.1)*.5;e.y+=e.vy;e.life++;
+      if(e.life>e.max||e.y<-10){e.x=rand(0,W);e.y=H+10;e.life=0;}
+      const a=Math.sin((e.life/e.max)*Math.PI)*.9;
+      ctx.beginPath();ctx.arc(e.x,e.y,e.sz,0,Math.PI*2);ctx.fillStyle=`hsla(${e.hue},100%,60%,${a})`;ctx.fill();
+    });
+    requestAnimationFrame(loop);
+  })();
+}
+
+/* ===== FINALE CANVAS ===== */
+function initFinaleCanvas(){
+  const cv=$('#finale-cv');if(!cv)return;
+  const ctx=cv.getContext('2d');let W,H;
+  const rsz=()=>{W=cv.width=cv.offsetWidth||window.innerWidth;H=cv.height=cv.offsetHeight||window.innerHeight;};
+  rsz();window.addEventListener('resize',rsz,{passive:true});
+  const spawnSp=(w,h)=>({x:rand(0,w||1200),y:rand((h||800)*.3,h||800),vx:rand(-1,1),vy:rand(-1.5,-.3),sz:rand(1,3),life:0,max:rand(100,250),g:Math.random()>.4});
+  let sps=Array.from({length:120},()=>spawnSp(W,H)),t=0;
+  (function loop(){
+    ctx.clearRect(0,0,W,H);
+    const gr=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.max(W,H)*.7);
+    gr.addColorStop(0,'rgba(200,169,110,.05)');gr.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
+    sps.forEach((s,i)=>{
+      s.x+=s.vx+Math.sin(t*.02+i)*.2;s.y+=s.vy;s.life++;
+      if(s.life>s.max||s.y<0){sps[i]=spawnSp(W,H);return;}
+      const a=Math.sin((s.life/s.max)*Math.PI);
+      ctx.beginPath();ctx.arc(s.x,s.y,s.sz,0,Math.PI*2);
+      ctx.fillStyle=s.g?`rgba(200,169,110,${a*.8})`:`rgba(255,255,255,${a*.3})`;ctx.fill();
+    });
+    ctx.save();ctx.translate(W/2,H/2);ctx.rotate(t*.003);
+    for(let i=0;i<8;i++){const ang=(i/8)*Math.PI*2,rx=Math.cos(ang)*Math.min(W,H)*.25,ry=Math.sin(ang)*Math.min(W,H)*.25;ctx.beginPath();ctx.arc(rx,ry,2,0,Math.PI*2);ctx.fillStyle=`rgba(200,169,110,${.2+Math.sin(t*.05+i)*.1})`;ctx.fill();}
+    ctx.restore();
+    t++;requestAnimationFrame(loop);
+  })();
+}
+
+console.log('%c🎬 MEMORIES OF AN UNFORGETTABLE DAY','font-size:1.3rem;color:#c8a96e;font-family:serif;padding:.5rem 1rem;');
+console.log('%c52 Photos (PHOTOS/A(1).jpg–A(52).jpg) + 31 Videos (VIDEOS/E(1).mp4–E(31).mp4)','color:#aaa;font-size:.8rem;');
+</script>
+</body>
+</html>
